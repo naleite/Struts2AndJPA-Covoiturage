@@ -21,6 +21,10 @@
 			<result name="success" type="redirectAction">city.action</result>
 			<result name="error">/pages/error.jsp</result>	
 		</action>
+		<action name="cityChoose" class="my.na.covoiturage.action.city.CityAction" method = "cityChoose">
+			<result name="success" type="redirectAction">city.action</result>
+			<result name="choose">/pages/choose.jsp</result>	
+		</action>
 		
 	</package>
 </struts>

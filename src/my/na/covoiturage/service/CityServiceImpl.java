@@ -7,8 +7,6 @@ import my.na.covoiturage.dao.CityDAOImpl;
 import my.na.covoiturage.dao.ICityDAO;
 import my.na.covoiturage.model.City;
 
-import com.opensymphony.xwork2.ActionSupport;
-
 
 
 public class CityServiceImpl implements ICityService{
@@ -32,8 +30,29 @@ public class CityServiceImpl implements ICityService{
 
 	@Override
 	public List<City> findCitiesByNameOrCode(String name, Integer code) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<City> list = null;
+		if((name == null||name.isEmpty()) && (code==null||code.intValue()==0)){
+			return getAllCities();
+		}
+		if(name==null || name.isEmpty()){
+			list = new ArrayList<City>();
+			City city = cityDAO.getByCode(code);
+			if(city!=null){
+				list.add(city);
+			}
+		}
+		else if(code == null || code.intValue()==0){
+			list = cityDAO.getByName(name);
+		}
+		else{
+			list = new ArrayList<City>();
+			City city = cityDAO.getByNameAndCode(name, code);
+			if(city!=null){
+				list.add(city);
+			}
+		}
+		return list;
 	}
 
 	

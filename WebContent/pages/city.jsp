@@ -38,6 +38,13 @@ Postal code: <input name="newCity.code" ><input type="submit" value="Add"/>
   </c:forEach>
  </table>
 </div>
+<h3>Selector</h3>
+<s:form action="cityChoose" method="post">
+<s:select name="cityDepart" list="listCity" listValue="name" listKey="id" headerKey="0" headerValue="City">
+
+</s:select>
+<s:submit value="submit" name="submit" />
+ </s:form>
 
 </body>
 </html>

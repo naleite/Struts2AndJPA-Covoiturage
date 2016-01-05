@@ -15,6 +15,7 @@ public class CityAction {
 	private List<City> listCity = new ArrayList<City>();
 	private CityVO newCity;
 	private Long idCityToDelete;
+	private String cityDepart;
 	
 	public String allCities() throws Exception{
 		
@@ -80,6 +81,21 @@ public class CityAction {
 
 	public final void setIdCityToDelete(Long idCityToDelete) {
 		this.idCityToDelete = idCityToDelete;
+	}
+
+	
+
+	public final String getCityDepart() {
+		return cityDepart;
+	}
+
+	public final void setCityDepart(String cityDepart) {
+		this.cityDepart = cityDepart;
+	}
+
+	public String cityChoose(){
+		
+		return "choose";
 	}
 	
 	

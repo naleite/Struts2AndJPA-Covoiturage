@@ -51,5 +51,20 @@ public class CityDAOImpl extends AbstractGenericDAO<City> implements ICityDAO {
 		return strBuff.toString();
 	}
 
+	@Override
+	public City getByNameAndCode(String name, Integer code) {
+		String qstr = "from City c where c.postalCode = :postalCode and c.name = :name";
+		Query query = em.createQuery(qstr);
+		query.setParameter("postalCode", code);
+		query.setParameter("name", name);
+		List<City> list = query.getResultList();
+		City res = null;
+		if(list !=null && !list.isEmpty()){
+			res = list.get(0);
+			
+		}
+		return res;
+	}
+
 	
 }

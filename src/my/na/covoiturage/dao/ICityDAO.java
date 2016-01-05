@@ -9,4 +9,6 @@ public interface ICityDAO extends IDAOGeneric<City> {
 	List<City> getByName(String name);
 	
 	City getByCode(Integer code);
+	
+	City getByNameAndCode(String name, Integer code);
 }
