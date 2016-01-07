@@ -10,4 +10,5 @@ public interface IUserDAO extends IDAOGeneric<User> {
 
 	User getByUserName(String userName);
 	List<User> getAllPassengersByTrip(Trip trip);
+	User checkUser(String name, String pwd);
 }

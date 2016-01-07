@@ -63,7 +63,8 @@ public class User implements Serializable {
 		
 		this.password = password;
 		
-		setUsername(username);
+		this.username = username;
+		this.userCode=username.toLowerCase().trim();
 		
 	}
 
@@ -81,7 +82,7 @@ public class User implements Serializable {
 
 	public void setUsername(String username) {
 		this.username = username;
-		setUserCode(username.toLowerCase().trim());
+		this.userCode=username.toLowerCase().trim();
 		
 	}   
 	public String getUserCode() {

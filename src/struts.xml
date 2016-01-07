@@ -25,6 +25,19 @@
 			<result name="success" type="redirectAction">city.action</result>
 			<result name="choose">/pages/choose.jsp</result>	
 		</action>
+		<action name="createUser" class="my.na.covoiturage.action.CreateUser" method = "createCompte">
+			<result name="success" type="redirectAction">city.action</result>
+			<result name="input">/pages/createUser.jsp</result>	
+		</action>
+		<action name="login" class="my.na.covoiturage.action.LoginAction">
+			<result name="success" type="redirectAction">city.action</result>
+			<result name="input">/pages/login.jsp</result>	
+		</action>
+		
+		<action name="logout" class="my.na.covoiturage.action.LoginAction" method = "logout">
+			<result name="input" type="redirectAction">city.action</result>
+			<result name="success">/pages/login.jsp</result>	
+		</action>
 		
 	</package>
 </struts>

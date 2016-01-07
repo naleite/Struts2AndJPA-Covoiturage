@@ -45,6 +45,7 @@ Postal code: <input name="newCity.code" ><input type="submit" value="Add"/>
 </s:select>
 <s:submit value="submit" name="submit" />
  </s:form>
+<a href="logout.action">logout sessionId = <%= session.getId() %></a>
 
 </body>
 </html>
