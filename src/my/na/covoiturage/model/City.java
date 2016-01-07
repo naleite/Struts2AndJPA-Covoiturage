@@ -30,6 +30,19 @@ public class City implements Serializable {
 	public City() {
 		super();
 	}   
+	
+	
+	/**
+	 * @param name
+	 * @param postalCode
+	 */
+	public City(String name, Integer postalCode) {
+		super();
+		this.name = name;
+		this.postalCode = postalCode;
+	}
+
+
 	public Long getId() {
 		return this.id;
 	}
@@ -51,14 +64,6 @@ public class City implements Serializable {
 	public void setPostalCode(Integer postalCode) {
 		this.postalCode = postalCode;
 	}
-	/**
-	 * @param name
-	 * @param postalCode
-	 */
-	public City(String name, Integer postalCode) {
-		super();
-		this.name = name;
-		this.postalCode = postalCode;
-	}
+	
    
 }

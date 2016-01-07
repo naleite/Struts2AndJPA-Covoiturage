@@ -1,9 +1,10 @@
-package my.na.covoiturage.dao;
+package my.na.covoiturage.dao.city;
 
 import java.util.List;
 
 import javax.persistence.Query;
 
+import my.na.covoiturage.dao.AbstractGenericDAO;
 import my.na.covoiturage.model.City;
 
 public class CityDAOImpl extends AbstractGenericDAO<City> implements ICityDAO {

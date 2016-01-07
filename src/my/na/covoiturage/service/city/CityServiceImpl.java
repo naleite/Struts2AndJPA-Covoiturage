@@ -1,10 +1,10 @@
-package my.na.covoiturage.service;
+package my.na.covoiturage.service.city;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import my.na.covoiturage.dao.CityDAOImpl;
-import my.na.covoiturage.dao.ICityDAO;
+import my.na.covoiturage.dao.city.CityDAOImpl;
+import my.na.covoiturage.dao.city.ICityDAO;
 import my.na.covoiturage.model.City;
 
 

@@ -1,4 +1,4 @@
-package my.na.covoiturage.service;
+package my.na.covoiturage.service.city;
 
 import java.util.List;
 

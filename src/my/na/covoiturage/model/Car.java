@@ -39,6 +39,21 @@ public class Car implements Serializable {
 	public Car() {
 		super();
 	}   
+	
+	
+	/**
+	 * @param code
+	 * @param owner
+	 * @param seatAvailable
+	 */
+	public Car(String code, User owner, Integer seatAvailable) {
+		super();
+		this.code = code;
+		this.owner = owner;
+		this.seatAvailable = seatAvailable;
+	}
+
+
 	public Long getId() {
 		return this.id;
 	}

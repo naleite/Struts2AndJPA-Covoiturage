@@ -3,10 +3,10 @@ package my.na.covoiturage.action.city;
 import java.util.ArrayList;
 import java.util.List;
 
-import my.na.covoiturage.dao.ICityDAO;
+import my.na.covoiturage.dao.city.ICityDAO;
 import my.na.covoiturage.model.City;
-import my.na.covoiturage.service.CityServiceImpl;
-import my.na.covoiturage.service.ICityService;
+import my.na.covoiturage.service.city.CityServiceImpl;
+import my.na.covoiturage.service.city.ICityService;
 
 public class CityAction {
 

@@ -1,7 +1,8 @@
-package my.na.covoiturage.dao;
+package my.na.covoiturage.dao.user;
 
 import java.util.List;
 
+import my.na.covoiturage.dao.IDAOGeneric;
 import my.na.covoiturage.model.Trip;
 import my.na.covoiturage.model.User;
 

@@ -1,7 +1,8 @@
-package my.na.covoiturage.dao;
+package my.na.covoiturage.dao.city;
 
 import java.util.List;
 
+import my.na.covoiturage.dao.IDAOGeneric;
 import my.na.covoiturage.model.City;
 
 public interface ICityDAO extends IDAOGeneric<City> {
