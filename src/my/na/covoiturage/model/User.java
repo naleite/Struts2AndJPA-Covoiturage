@@ -1,10 +1,14 @@
 package my.na.covoiturage.model;
 
 import java.io.Serializable;
-
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +17,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+
+import my.na.covoiturage.util.EncrypDES;
 
 /**
  * Entity implementation class for Entity: User
@@ -58,15 +64,15 @@ public class User implements Serializable {
 	 * @param password
 	 * @param cars
 	 */
-	public User(String username, String password) {
-		super();
-		
-		this.password = password;
-		
-		this.username = username;
-		this.userCode=username.toLowerCase().trim();
-		
-	}
+//	public User(String username, String password) {
+//		super();
+//		
+//		this.password = password;
+//		
+//		this.username = username;
+//		this.userCode=username.toLowerCase().trim();
+//		
+//	}
 
 
 	public Long getId() {
@@ -93,11 +99,15 @@ public class User implements Serializable {
 		this.userCode = userCode;
 	}   
 	public String getPassword() {
+		
 		return this.password;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
+          
+        
+		
 	}
 
 

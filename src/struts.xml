@@ -23,20 +23,20 @@
 		</action>
 		<action name="cityChoose" class="my.na.covoiturage.action.city.CityAction" method = "cityChoose">
 			<result name="success" type="redirectAction">city.action</result>
-			<result name="choose">/pages/choose.jsp</result>	
+			<result name="choose" type="redirect">/pages/choose.jsp</result>	
 		</action>
 		<action name="createUser" class="my.na.covoiturage.action.CreateUser" method = "createCompte">
-			<result name="success" type="redirectAction">city.action</result>
-			<result name="input">/pages/createUser.jsp</result>	
+			<result name="success" type="redirect">/pages/login.jsp</result>
+			<result name="input" type="redirect">/pages/createUser.jsp</result>	
 		</action>
 		<action name="login" class="my.na.covoiturage.action.LoginAction">
-			<result name="success" type="redirectAction">city.action</result>
-			<result name="input">/pages/login.jsp</result>	
+			<result name="success" type="redirect">/pages/profil.jsp</result>
+			<result name="input" >/pages/login.jsp</result>	
 		</action>
 		
 		<action name="logout" class="my.na.covoiturage.action.LoginAction" method = "logout">
-			<result name="input" type="redirectAction">city.action</result>
-			<result name="success">/pages/login.jsp</result>	
+			<result name="input" type="redirect">/pages/profil.jsp</result>
+			<result name="success" type="redirectAction">login</result>	
 		</action>
 		
 	</package>

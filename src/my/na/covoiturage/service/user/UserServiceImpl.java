@@ -1,5 +1,8 @@
 package my.na.covoiturage.service.user;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import my.na.covoiturage.dao.user.IUserDAO;
@@ -17,11 +20,13 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public void createUser(String username, String password) throws InformationErrorException {
+	public void createUser(String username, String password) throws InformationErrorException, UnsupportedEncodingException, NoSuchAlgorithmException {
 		User userdb = userDAO.getByUserName(username);
 		if(userdb==null){
 			User user = new User();
-			user.setPassword(password);
+			byte[] passByte=password.getBytes("UTF-8");
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			user.setPassword(new String(md.digest(passByte)));
 			user.setUsername(username);
 			userDAO.saveOrUpdate(user);
 		}
@@ -51,9 +56,10 @@ public class UserServiceImpl implements IUserService {
 
 	@Override
 	public User checkUser(String username, String pwd)
-			throws InformationErrorException {
-		
-		User userdb = userDAO.checkUser(username, pwd);
+			throws InformationErrorException, UnsupportedEncodingException, NoSuchAlgorithmException {
+		byte[] passByte=pwd.getBytes("UTF-8");
+		MessageDigest md = MessageDigest.getInstance("MD5");
+		User userdb = userDAO.checkUser(username, new String(md.digest(passByte)));
 		
 		return userdb;
 	}

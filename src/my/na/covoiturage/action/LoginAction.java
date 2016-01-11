@@ -2,6 +2,9 @@ package my.na.covoiturage.action;
 
 import java.util.Map;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletRequest;
+
 import my.na.covoiturage.model.User;
 import my.na.covoiturage.service.user.IUserService;
 import my.na.covoiturage.service.user.UserServiceImpl;
@@ -9,7 +12,6 @@ import my.na.covoiturage.service.user.UserServiceImpl;
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport implements SessionAware{
@@ -28,6 +30,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		if(user!=null&&user.equals(sessionmap.get("user"))){
 			return SUCCESS;
 		}
+		
 		
 		user = userService.checkUser(user.getUsername(), user.getPassword());
 		if(user==null){
@@ -70,6 +73,9 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	
 	public void validateExecute() {
+		if(user==null){
+			
+		}
 		if(user.getUsername()==null || user.getUsername().trim().isEmpty()){
 			addFieldError("username", "username can not be empty");
 		}
